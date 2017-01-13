@@ -1,17 +1,17 @@
 Player = Class {__includes = {Creature}}
 
-function Player:init(self, size)
+function Player:init(size, moveSpeed)
 	self.w = size
 	self.h = size
-	self.moveSpeed = size * 8;
+	self.moveSpeed = moveSpeed;
 	self.x = (love.graphics.getWidth() / 2) - (size / 2)
 	self.y = (love.graphics.getHeight() / 2) - (size / 2)
 
-	-- self.inventory = []
+	self.inventory = {}
 end
 
 function Player:update(dt)
-	Player:playerMove()
+	Player:playerMove(self, dt)
 end
 
 function Player:draw()
@@ -19,7 +19,7 @@ function Player:draw()
 	love.graphics.rectangle("fill", self.x, self.y, self.w, self.h)
 end
 
-function Player:playerMove(dt)
+function Player:playerMove(self, dt)
 	if love.keyboard.isDown("w") then
 		self.y = self.y - (self.moveSpeed * dt)
 	end
