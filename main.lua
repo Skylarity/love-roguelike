@@ -2,25 +2,24 @@ function love.load()
 	-- Game
 	love.window.setTitle("Roguelike!")
 
-	-- Classic
-	Object = require "classic"
-	require "entity"
-	require "player"
+	-- Setup
+	Class = require "hump.class"
+	Entity = require "entity"
+	LivingEntity = require "living-entity"
+	Player = require "player"
 
 	-- Window
 	love.graphics.setNewFont(16)
 	love.graphics.setBackgroundColor(0, 0, 0, 255)
 
 	-- Player
-	player = Player(32)
+	player = Player()
 end
 
 function love.update(dt)
-	-- Player
-	player.update(player, dt)
+	player:update()
 end
 
 function love.draw()
-	-- Player
-	player.draw(player)
+	player:draw()
 end

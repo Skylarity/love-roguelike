@@ -1,25 +1,25 @@
-Player = Entity:extend()
+Player = Class {__includes = {LivingEntity}}
 
-function Player.new(self, newSize)
-	self.w = newSize
-	self.h = newSize
-	self.moveSpeed = newSize * 8;
-	self.x = (love.graphics.getWidth() / 2) - (newSize / 2)
-	self.y = (love.graphics.getHeight() / 2) - (newSize / 2)
+function Player:init(self, size)
+	self.w = size
+	self.h = size
+	self.moveSpeed = size * 8;
+	self.x = (love.graphics.getWidth() / 2) - (size / 2)
+	self.y = (love.graphics.getHeight() / 2) - (size / 2)
 
-	self.inventory = []
+	-- self.inventory = []
 end
 
-function Player.update(self, dt)
-	Player.playerMove(self, dt)
+function Player:update(dt)
+	Player:playerMove()
 end
 
-function Player.draw(self)
+function Player:draw()
 	love.graphics.setColor(255, 112, 0, 255)
 	love.graphics.rectangle("fill", self.x, self.y, self.w, self.h)
 end
 
-function Player.playerMove(self, dt)
+function Player:playerMove(dt)
 	if love.keyboard.isDown("w") then
 		self.y = self.y - (self.moveSpeed * dt)
 	end
