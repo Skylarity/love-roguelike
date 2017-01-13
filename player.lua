@@ -1,4 +1,4 @@
-Player = Class {__includes = {LivingEntity}}
+Player = Class {__includes = {Creature}}
 
 function Player:init(self, size)
 	self.w = size

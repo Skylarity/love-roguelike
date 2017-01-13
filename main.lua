@@ -5,7 +5,7 @@ function love.load()
 	-- Setup
 	Class = require "hump.class"
 	Entity = require "entity"
-	LivingEntity = require "living-entity"
+	Creature = require "creature"
 	Player = require "player"
 
 	-- Window
