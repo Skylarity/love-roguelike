@@ -1,12 +1,13 @@
+-- Setup
+require "collisionDetection"
+Class = require "hump.class"
+require "entity"
+require "creature"
+require "player"
+
 function love.load()
 	-- Game
 	love.window.setTitle("Roguelike!")
-
-	-- Setup
-	Class = require "hump.class"
-	require "entity"
-	require "creature"
-	require "player"
 
 	-- Window
 	love.graphics.setNewFont(16)

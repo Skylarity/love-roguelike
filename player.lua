@@ -1,4 +1,5 @@
-Player = Class {__includes = {Creature}}
+Player = Class {}
+Creature:include(Creature)
 
 function Player:init(size, moveSpeed)
 	self.w = size
