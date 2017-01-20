@@ -18,8 +18,15 @@ end
 
 function love.update(dt)
 	player:update(dt)
+
+	-- Quitting
+	if love.keyboard.isDown("escape") then quitGame() end
 end
 
 function love.draw()
 	player:draw()
+end
+
+function quitGame()
+	love.event.quit()
 end

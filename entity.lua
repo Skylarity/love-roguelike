@@ -12,14 +12,8 @@ end
 
 function Entity:update()
 	-- TODO
-
-	if love.keyboard.isDown("escape") then quitGame() end
 end
 
 function Entity:draw()
 	-- TODO
-end
-
-function quitGame()
-	love.event.quit()
 end
